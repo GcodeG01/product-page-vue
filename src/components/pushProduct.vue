@@ -13,59 +13,37 @@
 
         <p>price of item: <input v-model="price" placeholder="price"> </p>
 
-        <button v-on:click="writeUserData(product,type,image,description,price)">save</button>   
+        <button v-on:click="writeUserData">save</button>   
      </div>
 </template>
 
 <script>
 /* eslint-disable */
 
-var firebase = require("firebase/app");
- data: {
-    product: 'hi'
-  }
-// Add the Firebase products that you want to use
-require("firebase/auth");
-require("firebase/firestore");
+import db from './firebaseInit'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDrDTo440WUch6ibt5FPhIbihsgqreckVk",
-  authDomain: "product-page-vue.firebaseapp.com",
-  databaseURL: "https://product-page-vue.firebaseio.com",
-  projectId: "product-page-vue",
-  storageBucket: "product-page-vue.appspot.com",
-  messagingSenderId: "130326519986",
-  appId: "1:130326519986:web:2a6071e83a90c670f729ab"
-};
-
-
-
-firebase.initializeApp(firebaseConfig);
 export default {
   data() {
       return{
-      product: 'hellow',
-      type: 'types',
-      image: 'images',
-      description: 'descriptions',
-      price: 'no way'
+        product: 'hellow',
+        type: 'types',
+        image: 'images',
+        description: 'descriptions',
+        price: 'no way'
       }
   },
   methods:{
-      writeUserData: function(product,type,image,description,price) {
-    firebaseConfig.database().ref('products/').set({
-            Product: product,
-            type: type,
-            image: image,
-            description:description,
-            price: price
-
-        })
- 
+      writeUserData() {
+          db.collection('products').add({
+            product: this.product,
+            type: this.type,
+            image: this.image,
+            description: this.description,
+            price: this.price
+          })
+        }
     }
   }
- 
-}
  
 /* eslint-enable */
 </script>
