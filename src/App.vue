@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+   
     <pushProduct msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import pushProduct from './components/pushProduct.vue'
+import pushProduct from './components/productDepartment.vue'
 
 export default {
   name: 'app',
@@ -25,4 +25,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
