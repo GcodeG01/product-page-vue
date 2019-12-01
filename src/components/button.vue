@@ -2,7 +2,7 @@
 
     <div id="pushProduct" >
 
-        <button onclick="window.location.href='components/productName.vue'">Create Product</button>   
+        <a href='/productName.vue' class="button">Create Product</a>   
 
      </div>
 </template>
@@ -16,7 +16,7 @@
 
 <style scoped>
 
-button {
+.button {
   background-color: #000000; 
   border: none;
   color: rgb(231, 210, 210);

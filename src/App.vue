@@ -6,12 +6,15 @@
 </template>
 
 <script>
-import pushProduct from './components/productDepartment.vue'
+import pushProduct from './components/button.vue'
+import productName from './components/productName.vue'
 
+/* eslint-disable */
 export default {
   name: 'app',
   components: {
-    pushProduct
+    pushProduct,
+    productName
   }
 }
 </script>
