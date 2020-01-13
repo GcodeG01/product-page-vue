@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-   
-    <pushProduct msg="Welcome to Your Vue.js App"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import pushProduct from './components/button.vue'
-import productName from './components/productName.vue'
+import productDepartment from './components/productDepartment'
+import pushProduct from './components/pushProduct'
 
-/* eslint-disable */
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    pushProduct,
-    productName
+    productDepartment,
+    pushProduct
   }
 }
 </script>
@@ -28,5 +26,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>
